@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            })
+        })
+
+        $(document).ready(function(){
+            $("#restituir").click(function(){
+                $("p").show();
+            })
+        })
+    </script>
     <title>Formulario</title>
 </head>
 <body>
     <form action="#" method="post" id="miFormulario">
         <p><h1>Completar sus datos</h1></p>
-        <p>Nombres: <input type="text" id="nombres" size="40"></p>
+        <p>Nombres: <input type="text" id="nombre" size="40"></p>
         <p>Correo: <input type="email" id="correo" size="40"></p>
         <p>Año de nacimiento: <input type="number" id="nacimiento" min="1930" max="2025" value="2000" step="1"></p>
         <p>Teléfono: <input type="tel" id="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required="true"></p>
@@ -53,9 +67,39 @@
                 <option value="sistemas">TI</option>
             </select>
         </p>
+        <p>Sexo:<br>
+            <input type="radio" name="sexo" value="Varón">
+            <label for="sexo">Hombre</label><br>
+            <input type="radio" name="sexo" value="Mujer">
+            <label for="sexo">Mujer</label>
+        </p>
+        <p><input type="checkbox" name="acepto" checked="true">Acepto las condiciones</p>
+        <p>Lenguajes de programación:
+            <select name="lenguaje">
+                <option label="Ninguno"></option>
+                <optgroup label="Orientado a objetos">
+                    <option label="Java"></option>
+                    <option label="C#"></option>
+                </optgroup>
+                <optgroup label="Web">
+                    <option label="JavaScript"></option>
+                    <option label="PHP"></option>
+                </optgroup>
+            </select>
+        </p>
         <p>Comentario:
             <textarea id="comentario" rows="10" cols="50"></textarea>
         </p>
+        <p>
+            <input type="submit" onclick="enviar()" value="Enviar datos"><br><br>
+            <input type="button" id="restituir" value="Restituir">
+        </p>
     </form>
+    <script>
+        function enviar(){
+            var nombre1 = document.getElementById("nombre").value;
+            alert(nombre1);
+        }
+    </script>
 </body>
 </html>

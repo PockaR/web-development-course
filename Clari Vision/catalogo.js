@@ -1,9 +1,9 @@
 $(function() {
     const productos = [
-      { nombre: "Lentes Classic", marca: "Urban", genero: "Ambos", color: "Negro", precio: "120", imagen: "producto1.jpg" },
-      { nombre: "Lentes Urban", marca: "Classic", genero: "Hombre", color: "Azul", precio: "140", imagen: "producto2.jpg" },
-      { nombre: "Lentes Red Light", marca: "Classic", genero: "Mujer", color: "Rojo", precio: "100", imagen: "producto3.jpg" },
-      { nombre: "Lentes Sport", marca: "Sport", genero: "Ambos", color: "Negro", precio: "130", imagen: "producto4.jpg" },
+      { nombre: "DD052", marca: "Shaddai", genero: "Hombre", color: "Negro", precio: "120", imagen: "DD052.jpg" },
+      { nombre: "3042", marca: "Carlos Rossi", genero: "Unisex", color: "Negro", precio: "140", imagen: "3042.jpg" },
+      { nombre: "J2105", marca: "Feillis", genero: "Mujer", color: "Rosa", precio: "100", imagen: "J2105.jpg" },
+      { nombre: "91725", marca: "Viola Milano", genero: "Unisex", color: "Marrón", precio: "130", imagen: "91725.jpg" },
     ];
     const itemsPorPagina = 9;
     let paginaActual = 1;
@@ -40,8 +40,8 @@ $(function() {
             <div class="card">
               <img src="${p.imagen}" class="card-img-top" alt="${p.nombre}">
               <div class="card-body text-center">
-                <h5 class="card-title">${p.nombre}</h5>
-                <p>${p.marca} | ${p.genero} | ${p.color}</p>
+                <h5 class="card-title">${p.marca}</h5>
+                <p>${p.nombre} | ${p.genero} | ${p.color}</p>
                 <p class="precio">S/ ${p.precio}</p>
                 <button class="btn">Agregar al carrito</button>
               </div>
